@@ -10,4 +10,5 @@ script.js
 style.css 
 
 What I have done so far
-So far I have managaed to make several arrays containing data to draw from, and makeing a prompt box to appeare. I can't get the data to save yet.
+So far I have managaed to make several arrays containing data to draw from, and I have all the nessasary prompts and alerts working. Most actions are logged to the console.
+
