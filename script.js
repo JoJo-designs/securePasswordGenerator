@@ -7,6 +7,7 @@ var perams = {
   lowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   numeric: [1,2,3,4,5,6,7,8,9,0],
   specialCharacters: ["!", "#", "@", "$", "%", "^", "&", "(", ")", "*", "=", "+", "_", "-", "/", "<", ">", "?", "[", "]", "{", "}", "~"],
+  arrayList: ["upperCase", "lowerCase", "numeric", "specialCharacters"],
 }
 
 var useAnswer;
@@ -16,8 +17,8 @@ var useNumeric;
 var useSpecialCharacters;
 
  // testing arrays
-console.log(perams.shorter);
-console.log(perams.longer);
+console.log(perams.min);
+console.log(perams.max);
 console.log(perams.upperCase);
 console.log(perams.lowerCase);
 console.log(perams.numeric);
@@ -36,35 +37,41 @@ function writePassword() {
 generateBtn.addEventListener("onclick", writePassword);
 
 document.getElementById("generate").onclick = function(){
-useAnswer = prompt ("what is your passwords lenght?", "8 to 124 characters");
+useAnswer = prompt ("What is your passwords lenght?"); 
+useAnswer = parseInt(useAnswer)
 console.log(useAnswer);
-if (useAnswer < perams.min) {
-    alert("password is too short please use a number between 8 and 124.");
-    return;
- } else if (useAnswer > perams.max){
-    alert("password is too long please use a number between 8 and 124.");
-    return;
-  } else if (useAnswer === "8 to 124 characters"){
-    alert("please select a number");
-    return;
-      } else (useAnswer >= 8 && useAnswer <= 124)
-        useUpperCase = confirm("Would you like to have upper case letters?");
+if (isNaN(useAnswer) || useAnswer < perams.min || useAnswer > perams.max ) { // check if the entered value is a number between 8 and 124.
+    alert("Invaild Answer. Please seclect a number between 8 and 124");
+    return;}
+        useUpperCase = confirm("Would you like to have upper case letters?"); // ask if the user wants uppercase
         console.log(useUpperCase);
-        useLowerCase = confirm("Would you like to have lower case letters?");
+        useLowerCase = confirm("Would you like to have lower case letters?"); // ask if the user wants lowercase
         console.log(useLowerCase);
-        useNumeric = confirm("Would you like to use numbers?");
+        useNumeric = confirm("Would you like to use numbers?"); // ask if the user wants numbers
         console.log(useLowerCase);
-        useSpecialCharacters = confirm("Would you like to use special characters?");
+        useSpecialCharacters = confirm("Would you like to use special characters?"); // ask the user if they wants special characters
         console.log(useSpecialCharacters);
-return [useAnswer, useNumeric, useSpecialCharacters, useUpperCase, useLowerCase];
+return;
 }
 
-
-function writepasswords() {
-   if (useUpperCase = true); {
-   console.log(writePasswords)
-   }
+function seclectRandomCharacter(arrayOfCharacters) {
+  var item = arrayOfCharacters[Math.floor(Math.random() * arrayOfCharacters.length)];
+  return item;
 }
 
+function seclectRandomArray(arrayOfArrays) {
+  var item = arrayOfArrays[Math.floor(Math.random() * arrayOfArrays.length)];
+  return item;
+}
 
-console.log(Math.ceil(Math.random()));
+console.log(seclectRandomCharacter(perams.upperCase));
+console.log(seclectRandomCharacter(perams.lowerCase));
+console.log(seclectRandomCharacter(perams.specialCharacters));
+console.log(seclectRandomCharacter(perams.numeric));
+console.log(seclectRandomArray(perams.arrayList));
+
+// I'm gonna try this right here
+
+console.log(seclectRandomArray(perams.arrayList)) {
+
+}
