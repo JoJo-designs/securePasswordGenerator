@@ -78,13 +78,37 @@ document.getElementById("generate").onclick = function () {
   // ask the user if they wants special characters
   useSpecialCharacters = confirm("Would you like to use special characters?"); 
   console.log(useSpecialCharacters);
-  } return;
-}
-createpassword () {
-  if (useUppercase) {
-    console.log(seclectRandomCharacter(perams.upperCase))
+  }
+  // if statments to confirm what the users 
+  if (useUpperCase){
+    console.log("The user wants upper case characters"); 
+  } else if (!useUpperCase){
+    console.log("The user doesnt want upper case characters"); 
+  }
+  if (useLowerCase){
+    console.log("The user wants lower case characters"); 
+  } else if (!useLowerCase){
+    console.log("The user doesnt want lower case characters"); 
+  }
+  if (useNumeric){
+    console.log("The user wants numbers"); 
+  } else if (!useNumeric){
+    console.log("The user doesnt want numbers"); 
+  }
+  if (useSpecialCharacters){
+    console.log("The user wants special characters"); 
+  } else if (!useSpecialCharacters){
+    console.log("The user doesnt want special characters"); 
   }
 };
+
+
+
+//createpassword () {
+  //if (useUppercase) {
+   // console.log(seclectRandomCharacter(perams.upperCase))
+ // }
+//};
 
 //test randomization
 console.log(seclectRandomCharacter(perams.upperCase))
