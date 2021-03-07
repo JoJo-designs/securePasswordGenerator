@@ -34,11 +34,29 @@ function writePassword() {
   passwordText.value = password;
 }
 
+
+//repeating loop
+function createpassword() {
+  for (var i = 0; i < useAnswer + 1; i++) {
+    const element = array [i];
+  }
+}
+
+//functions to randomize characters and an array of the array names
+function seclectRandomCharacter(arrayOfCharacters) {
+  var item = arrayOfCharacters[Math.floor(Math.random() * arrayOfCharacters.length)];
+  return item;
+}
+
+function seclectRandomArray(arrayOfArrays) {
+  var item2 = arrayOfArrays[Math.floor(Math.random() * arrayOfArrays.length)];
+  return item2;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("onclick", writePassword);
 
 //makes prompts and alerts/confirms
-
 document.getElementById("generate").onclick = function () {
   useAnswer = prompt("What is your passwords lenght?");
   useAnswer = parseInt(useAnswer)
@@ -47,7 +65,7 @@ document.getElementById("generate").onclick = function () {
   if (isNaN(useAnswer) || useAnswer < perams.min || useAnswer > perams.max) { 
     alert("Invaild Answer. Please seclect a number between 8 and 124");
     return;
-  }
+  } else  {
 // ask if the user wants uppercase
   useUpperCase = confirm("Would you like to have upper case letters?"); 
   console.log(useUpperCase);
@@ -60,31 +78,13 @@ document.getElementById("generate").onclick = function () {
   // ask the user if they wants special characters
   useSpecialCharacters = confirm("Would you like to use special characters?"); 
   console.log(useSpecialCharacters);
-  return;
+  } return;
 }
-
-createPassword ();
-
-createPassword() {
-for (var i = 0; i < useAnswer + 1; i++) {
-    if (useUpperCase && useLowerCase && useNumeric && useSpecialCharacters) {
-      seclectRandomCharacter(perams.uppercase);
-      seclectRandomCharacter(perams.lowerCase);
-      seclectRandomCharacter(perams.numeric);
-      seclectRandomCharacter(perams.specialCharacters);
- }
-}
+createpassword () {
+  if (useUppercase) {
+    console.log(seclectRandomCharacter(perams.upperCase))
+  }
 };
-
-function seclectRandomCharacter(arrayOfCharacters) {
-  var item = arrayOfCharacters[Math.floor(Math.random() * arrayOfCharacters.length)];
-  return item;
-}
-
-function seclectRandomArray(arrayOfArrays) {
-  var item2 = arrayOfArrays[Math.floor(Math.random() * arrayOfArrays.length)];
-  return item2;
-}
 
 //test randomization
 console.log(seclectRandomCharacter(perams.upperCase))
@@ -92,4 +92,3 @@ console.log(seclectRandomCharacter(perams.lowerCase))
 console.log(seclectRandomCharacter(perams.specialCharacters))
 console.log(seclectRandomCharacter(perams.numeric))
 console.log(seclectRandomArray(perams.arrayList))
-//console.log(createPassword());
