@@ -53,7 +53,8 @@ function seclectRandomArray(arrayOfArrays) {
   return item2;
 }
 
-// do while statment to see if it works
+// do while statment to see if it works.  If I could get it to run each statment and add to 
+// 'i' I think this will work.
 function doWhile () {
   do {
     if (useUpperCase){
@@ -73,6 +74,8 @@ function doWhile () {
       i + 1;
     }
   }
+  //when the while statment looks like ( while (i <= useAnswer)) it keep running forever
+  // when the while statment looks like (while (i >= useAnswer)) it only ever runs once
   while (i >= useAnswer) {
     }; 
 };
