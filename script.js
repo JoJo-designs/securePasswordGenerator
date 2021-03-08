@@ -37,9 +37,7 @@ function writePassword() {
 
 //repeating loop
 function createpassword() {
-  for (var i = 0; i < useAnswer + 1; i++) {
-    const element = array [i];
-  }
+  for (var i = 0; i < useAnswer + 1; i++);  
 }
 
 //functions to randomize characters and an array of the array names
@@ -82,24 +80,29 @@ document.getElementById("generate").onclick = function () {
   // if statments to confirm what the users 
   if (useUpperCase){
     console.log("The user wants upper case characters"); 
+    console.log(seclectRandomCharacter(perams.upperCase));
   } else if (!useUpperCase){
     console.log("The user doesnt want upper case characters"); 
   }
   if (useLowerCase){
     console.log("The user wants lower case characters"); 
+    console.log(seclectRandomCharacter(perams.lowerCase));
   } else if (!useLowerCase){
     console.log("The user doesnt want lower case characters"); 
   }
   if (useNumeric){
     console.log("The user wants numbers"); 
+    console.log(seclectRandomCharacter(perams.numeric));
   } else if (!useNumeric){
     console.log("The user doesnt want numbers"); 
   }
   if (useSpecialCharacters){
     console.log("The user wants special characters"); 
+    console.log(seclectRandomCharacter(perams.specialCharacters));
   } else if (!useSpecialCharacters){
     console.log("The user doesnt want special characters"); 
-  }
+  } 
+  console.log(seclectRandomArray (perams.arrayList));
 };
 
 
