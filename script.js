@@ -102,7 +102,36 @@ document.getElementById("generate").onclick = function () {
   } else if (!useSpecialCharacters){
     console.log("The user doesnt want special characters"); 
   } 
+  if (useUpperCase, useLowerCase, useNumeric, useSpecialCharacters === false) {
+    alert("Invailed Answer. Please pick atleast one character set");
+    console.log("no characters selected")
+    return;
+  } 
+     
+  //console logs a random array from the array list I want to be able to make 
+  //the program select a random array and then a character from the array and 
+  //continue that until the number is === to the useAnswer. I am not sure this 
+  //is a good idea. It would be easier to just to set an order and 
+  //have it always pick in that order.
   console.log(seclectRandomArray (perams.arrayList));
+  
+  // Loop the arrays and only selects the ones that cames up true. If it works.
+  // but It will only partly work becuase it will run the loop and select a value
+  // for each which could be up to 4 characters for each loop. 
+  createpassword(); {
+    if (useUpperCase){
+     console.log(seclectRandomCharacter(perams.upperCase));
+    }
+    if (useLowerCase){
+      console.log(seclectRandomCharacter(perams.lowerCase));
+    }
+    if (useNumeric){
+      console.log(seclectRandomCharacter(perams.numeric));
+    }
+    if (useSpecialCharacters){
+      console.log(seclectRandomCharacter(perams.specialCharacters));
+    }
+  }
 };
 
 
