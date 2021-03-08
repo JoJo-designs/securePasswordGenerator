@@ -34,11 +34,12 @@ function writePassword() {
   passwordText.value = password;
 }
 
-
 //repeating loop
-function createpassword() {
-  for (var i = 0; i < useAnswer + 1; i++);  
-}
+//function createpassword() {
+ // for (var i = 0; i < useAnswer; i++);{
+ //   console.log(i);
+ // }  
+//}
 
 //functions to randomize characters and an array of the array names
 function seclectRandomCharacter(arrayOfCharacters) {
@@ -50,6 +51,31 @@ function seclectRandomArray(arrayOfArrays) {
   var item2 = arrayOfArrays[Math.floor(Math.random() * arrayOfArrays.length)];
   return item2;
 }
+
+// do while statment to see if it works
+function doWhile () {
+  var i = 1;
+  do {
+    if (useUpperCase){
+     console.log(seclectRandomCharacter(perams.upperCase));
+     i + 1;
+    }
+    if (useLowerCase){
+      console.log(seclectRandomCharacter(perams.lowerCase));
+      i + 1;
+   }
+    if (useNumeric){
+     console.log(seclectRandomCharacter(perams.numeric));
+     i + 1;
+    }
+    if (useSpecialCharacters){
+      console.log(seclectRandomCharacter(perams.specialCharacters));
+      i + 1;
+    }
+  }
+  while (i >= useAnswer) {
+    }; 
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("onclick", writePassword);
@@ -110,28 +136,29 @@ document.getElementById("generate").onclick = function () {
      
   //console logs a random array from the array list I want to be able to make 
   //the program select a random array and then a character from the array and 
-  //continue that until the number is === to the useAnswer. I am not sure this 
-  //is a good idea. It would be easier to just to set an order and 
-  //have it always pick in that order.
+  //continue that until the number is equal to the useAnswer. I am not sure this 
+  //is a good idea. It would be easier to just to set an order and have it always 
+  //pick in that order.
   console.log(seclectRandomArray (perams.arrayList));
   
-  // Loop the arrays and only selects the ones that cames up true. If it works.
+  // Loop the arrays and only selects the ones that comes up true. If it works.
   // but It will only partly work becuase it will run the loop and select a value
   // for each which could be up to 4 characters for each loop. 
-  createpassword(); {
-    if (useUpperCase){
-     console.log(seclectRandomCharacter(perams.upperCase));
-    }
-    if (useLowerCase){
-      console.log(seclectRandomCharacter(perams.lowerCase));
-    }
-    if (useNumeric){
-      console.log(seclectRandomCharacter(perams.numeric));
-    }
-    if (useSpecialCharacters){
-      console.log(seclectRandomCharacter(perams.specialCharacters));
-    }
-  }
+  //createpassword(); {
+    //if (useUpperCase){
+     //console.log(seclectRandomCharacter(perams.upperCase));
+    //}
+    //if (useLowerCase){
+    //  console.log(seclectRandomCharacter(perams.lowerCase));
+   // }
+   // if (useNumeric){
+     // console.log(seclectRandomCharacter(perams.numeric));
+    //}
+    //if (useSpecialCharacters){
+     // console.log(seclectRandomCharacter(perams.specialCharacters));
+    //}
+  //}
+  doWhile ();
 };
 
 
