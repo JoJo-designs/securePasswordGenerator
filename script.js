@@ -15,6 +15,7 @@ var useUpperCase;
 var useLowerCase;
 var useNumeric;
 var useSpecialCharacters;
+var i = 1;
 
 // testing arrays
 console.log(perams.min);
@@ -36,9 +37,9 @@ function writePassword() {
 
 //repeating loop
 //function createpassword() {
- // for (var i = 0; i < useAnswer; i++);{
- //   console.log(i);
- // }  
+ //for (var i = 0; i< useAnswer; i++);{
+  // console.log(i);
+ //}  
 //}
 
 //functions to randomize characters and an array of the array names
@@ -54,7 +55,6 @@ function seclectRandomArray(arrayOfArrays) {
 
 // do while statment to see if it works
 function doWhile () {
-  var i = 1;
   do {
     if (useUpperCase){
      console.log(seclectRandomCharacter(perams.upperCase));
@@ -144,19 +144,23 @@ document.getElementById("generate").onclick = function () {
   // Loop the arrays and only selects the ones that comes up true. If it works.
   // but It will only partly work becuase it will run the loop and select a value
   // for each which could be up to 4 characters for each loop. 
-  //createpassword(); {
-    //if (useUpperCase){
-     //console.log(seclectRandomCharacter(perams.upperCase));
-    //}
+ // createpassword(); {
+   // if (useUpperCase){
+   //  console.log(seclectRandomCharacter(perams.upperCase));
+   //  i + 1;
+   // }
     //if (useLowerCase){
     //  console.log(seclectRandomCharacter(perams.lowerCase));
+    //  i + 1;
    // }
-   // if (useNumeric){
-     // console.log(seclectRandomCharacter(perams.numeric));
-    //}
-    //if (useSpecialCharacters){
-     // console.log(seclectRandomCharacter(perams.specialCharacters));
-    //}
+    //if (useNumeric){
+    //  console.log(seclectRandomCharacter(perams.numeric));
+    //  i + 1;
+   // }
+   // if (useSpecialCharacters){
+    //  console.log(seclectRandomCharacter(perams.specialCharacters));
+   //   i + 1;
+   // }
   //}
   doWhile ();
 };
