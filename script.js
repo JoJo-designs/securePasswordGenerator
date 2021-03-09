@@ -16,6 +16,9 @@ var useLowerCase;
 var useNumeric;
 var useSpecialCharacters;
 var i = 1;
+var password = "";
+var allArrays = [];
+var passwordLenght = useAnswer;
 
 // testing arrays
 console.log(perams.min);
@@ -35,56 +38,37 @@ function writePassword() {
   passwordText.value = password;
 }
 
-//repeating loop
-//function createpassword() {
- //for (var i = 0; i< useAnswer; i++);{
-  // console.log(i);
- //}  
-//}
-
 //functions to randomize characters and an array of the array names
 function seclectRandomCharacter(arrayOfCharacters) {
   var item = arrayOfCharacters[Math.floor(Math.random() * arrayOfCharacters.length)];
   return item;
 }
 
-function seclectRandomArray(arrayOfArrays) {
-  var item2 = arrayOfArrays[Math.floor(Math.random() * arrayOfArrays.length)];
-  return item2;
-}
-
 // do while statment to see if it works.  If I could get it to run each statment and add to 
 // 'i' I think this will work.
 function doWhile () {
   do {
-    if (useUpperCase){
-     console.log(seclectRandomCharacter(perams.upperCase));
-     i + 1;
+    password + password + seclectRandomCharacter(allArrays);
+    console.log(password);
     }
-    if (useLowerCase){
-      console.log(seclectRandomCharacter(perams.lowerCase));
-      i + 1;
-   }
-    if (useNumeric){
-     console.log(seclectRandomCharacter(perams.numeric));
-     i + 1;
-    }
-    if (useSpecialCharacters){
-      console.log(seclectRandomCharacter(perams.specialCharacters));
-      i + 1;
-    }
-  }
   //when the while statment looks like ( while (i <= useAnswer)) it keep running forever
   // when the while statment looks like (while (i >= useAnswer)) it only ever runs once
-  while (i >= useAnswer) {
+  while (password.length >= useAnswer) {
     }; 
 };
 
+function whStatement() {
+  while (password.length >= useAnswer) {
+    password + password + seclectRandomCharacter(allArrays);
+    console.log(password);
+  } return password;
+};
+
 // Add event listener to generate button
-generateBtn.addEventListener("onclick", writePassword);
+
 
 //makes prompts and alerts/confirms
-document.getElementById("generate").onclick = function () {
+function generatePassword() {
   useAnswer = prompt("What is your passwords lenght?");
   useAnswer = parseInt(useAnswer)
   console.log(useAnswer);
@@ -106,79 +90,64 @@ document.getElementById("generate").onclick = function () {
   useSpecialCharacters = confirm("Would you like to use special characters?"); 
   console.log(useSpecialCharacters);
   }
+
+
   // if statments to confirm what the users 
   if (useUpperCase){
     console.log("The user wants upper case characters"); 
-    console.log(seclectRandomCharacter(perams.upperCase));
-  } else if (!useUpperCase){
+    password = password + seclectRandomCharacter(perams.upperCase);
+    allArrays = allArrays.concat(perams.upperCase);
+    } else if (!useUpperCase){
     console.log("The user doesnt want upper case characters"); 
   }
+
   if (useLowerCase){
     console.log("The user wants lower case characters"); 
-    console.log(seclectRandomCharacter(perams.lowerCase));
+    //console.log(seclectRandomCharacter(perams.lowerCase));
+    password = password + seclectRandomCharacter(perams.lowerCase);
+    allArrays = allArrays.concat(perams.lowerCase);
   } else if (!useLowerCase){
     console.log("The user doesnt want lower case characters"); 
   }
+
   if (useNumeric){
     console.log("The user wants numbers"); 
-    console.log(seclectRandomCharacter(perams.numeric));
+    //console.log(seclectRandomCharacter(perams.numeric));
+    password = password + seclectRandomCharacter(perams.numeric);
+    allArrays = allArrays.concat(perams.numeric);
   } else if (!useNumeric){
     console.log("The user doesnt want numbers"); 
   }
+
   if (useSpecialCharacters){
     console.log("The user wants special characters"); 
-    console.log(seclectRandomCharacter(perams.specialCharacters));
+    //console.log(seclectRandomCharacter(perams.specialCharacters));
+    password = password + seclectRandomCharacter(perams.specialCharacters);
+    allArrays = allArrays.concat(perams.specialCharacters);
+    console.log(password);
+    console.log(allArrays);
   } else if (!useSpecialCharacters){
     console.log("The user doesnt want special characters"); 
   } 
-  if (useUpperCase, useLowerCase, useNumeric, useSpecialCharacters === false) {
+
+  if (! (useUpperCase || useNumeric || useSpecialCharactersfalse || useLowerCase)) {
     alert("Invailed Answer. Please pick atleast one character set");
     console.log("no characters selected")
     return;
   } 
-     
-  //console logs a random array from the array list I want to be able to make 
-  //the program select a random array and then a character from the array and 
-  //continue that until the number is equal to the useAnswer. I am not sure this 
-  //is a good idea. It would be easier to just to set an order and have it always 
-  //pick in that order.
-  console.log(seclectRandomArray (perams.arrayList));
-  
-  // Loop the arrays and only selects the ones that comes up true. If it works.
-  // but It will only partly work becuase it will run the loop and select a value
-  // for each which could be up to 4 characters for each loop. 
- // createpassword(); {
-   // if (useUpperCase){
-   //  console.log(seclectRandomCharacter(perams.upperCase));
-   //  i + 1;
-   // }
-    //if (useLowerCase){
-    //  console.log(seclectRandomCharacter(perams.lowerCase));
-    //  i + 1;
-   // }
-    //if (useNumeric){
-    //  console.log(seclectRandomCharacter(perams.numeric));
-    //  i + 1;
-   // }
-   // if (useSpecialCharacters){
-    //  console.log(seclectRandomCharacter(perams.specialCharacters));
-   //   i + 1;
-   // }
-  //}
-  doWhile ();
+
+  currentPasswordLength = password.length;
+
+  for(var i=currentPasswordLength; i < useAnswer ;i++){
+    password = password + seclectRandomCharacter(allArrays);
+  }
+
+  return password;
 };
-
-
-
-//createpassword () {
-  //if (useUppercase) {
-   // console.log(seclectRandomCharacter(perams.upperCase))
- // }
-//};
 
 //test randomization
 console.log(seclectRandomCharacter(perams.upperCase))
 console.log(seclectRandomCharacter(perams.lowerCase))
 console.log(seclectRandomCharacter(perams.specialCharacters))
 console.log(seclectRandomCharacter(perams.numeric))
-console.log(seclectRandomArray(perams.arrayList))
+generateBtn.addEventListener("click", writePassword);
