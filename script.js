@@ -15,7 +15,6 @@ var useUpperCase;
 var useLowerCase;
 var useNumeric;
 var useSpecialCharacters;
-var i = 1;
 var password = "";
 var allArrays = [];
 var passwordLenght = useAnswer;
@@ -43,29 +42,6 @@ function seclectRandomCharacter(arrayOfCharacters) {
   var item = arrayOfCharacters[Math.floor(Math.random() * arrayOfCharacters.length)];
   return item;
 }
-
-// do while statment to see if it works.  If I could get it to run each statment and add to 
-// 'i' I think this will work.
-function doWhile () {
-  do {
-    password + password + seclectRandomCharacter(allArrays);
-    console.log(password);
-    }
-  //when the while statment looks like ( while (i <= useAnswer)) it keep running forever
-  // when the while statment looks like (while (i >= useAnswer)) it only ever runs once
-  while (password.length >= useAnswer) {
-    }; 
-};
-
-function whStatement() {
-  while (password.length >= useAnswer) {
-    password + password + seclectRandomCharacter(allArrays);
-    console.log(password);
-  } return password;
-};
-
-// Add event listener to generate button
-
 
 //makes prompts and alerts/confirms
 function generatePassword() {
@@ -130,7 +106,7 @@ function generatePassword() {
     console.log("The user doesnt want special characters"); 
   } 
 
-  if (! (useUpperCase || useNumeric || useSpecialCharactersfalse || useLowerCase)) {
+  if (! (useUpperCase || useNumeric || useSpecialCharacters || useLowerCase)) {
     alert("Invailed Answer. Please pick atleast one character set");
     console.log("no characters selected")
     return;
@@ -150,4 +126,6 @@ console.log(seclectRandomCharacter(perams.upperCase))
 console.log(seclectRandomCharacter(perams.lowerCase))
 console.log(seclectRandomCharacter(perams.specialCharacters))
 console.log(seclectRandomCharacter(perams.numeric))
+
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
